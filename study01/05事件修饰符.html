@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <script src="./lib/vue-2.4.0.js"></script>
+  <script src="../lib/vue-2.4.0.js"></script>
   <style>
     .inner {
       height: 150px;
@@ -53,11 +53,11 @@
     </div> -->
 
     <!-- .self 只会阻止自己身上冒泡行为的触发，并不会真正阻止 冒泡的行为 -->
-    <!-- <div class="outer" @click="div2Handler">
+     <div class="outer" @click="div2Handler">
       <div class="inner" @click.self="div1Handler">
         <input type="button" value="戳他" @click="btnHandler">
       </div>
-    </div> -->
+    </div>
 
   </div>
 
