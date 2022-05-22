@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <div id="app">
+
+    <!-- v-bind: 是 Vue中，提供的用于绑定属性的指令 -->
+    <input type="button" value="按钮" v-bind:title="mytitle + '123'">
+    <!-- 注意： v-bind: 指令可以被简写为 :要绑定的属性 -->
+    <!-- v-bind 中，可以写合法的JS表达式 -->
+
+    <!-- Vue 中提供了 v-on: 事件绑定机制 -->
+     <input type="button" value="按钮" :title="mytitle + '123'" v-on:click="alert('hello')">
+
+    <!-- 点击按钮调用show方法 -->
+    <input type="button" value="按钮" @click="show">
+  </div>
+
+
+  <script src="../lib/vue-2.4.0.js"></script>
+
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        msg: '我是共饮一杯无',
+        msg2: '<h1>共饮一杯无h1</h1>',
+        mytitle: '这是一个共饮一杯无定义的title'
+      },
+      methods: { // 这个 methods属性中定义了当前Vue实例所有可用的方法
+        show: function () {
+          alert('Hello')
+        }
+      }
+    })
+
+
+    /* document.getElementById('btn').onclick = function(){
+      alert('Hello')
+    } */
+  </script>
+</body>
+
+</html>
+
+
+
+
+<!-- 1. 如何定义一个基本的Vue代码结构 -->
+<!-- 2. 插值表达式 和  v-text   -->
+<!-- 3. v-cloak -->
+<!-- 4. v-html -->
+<!-- 5. v-bind   Vue提供的属性绑定机制   缩写是 : -->
+<!-- 6. v-on     Vue提供的事件绑定机制   缩写是 @ -->
