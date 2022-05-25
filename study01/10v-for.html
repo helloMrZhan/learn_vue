@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--导入vue包-->
+    <script src="../lib/vue-2.4.0.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <p>普通数组:</p>
+    <p v-for="(item,i) in list">索引值：{{i}}-------数值：{{item}}</p>
+    <p>对象数组:</p>
+    <p v-for="(user,i) in objList">名字：{{user.name}}-------年龄：{{user.age}}---索引：{{i}}</p>
+    <p>对象</p>
+    <p v-for="(val,key,i) in user">值：{{val}}-------键：{{key}}---索引：{{i}}</p>
+    <p>数字循环</p>
+    <p v-for="num in 6">这是{{num}}</p>
+
+    <input type="text" v-model="id">
+    <input type="text" v-model="name">
+    <input type="button" @click="add" value="添加">
+</div>
+
+<script>
+
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            list:[1,2,3,4,5],
+            objList:[
+                {
+                    name:'小明',
+                    age:16
+                },
+                {
+                    name:'小红',
+                    age:17
+                },
+                {
+                    name:'小哈',
+                    age:18
+                }
+            ],
+            user:{
+                name:'张三',
+                age:99
+            },
+            id:0,
+            name:""
+        },
+        methods:{
+            add(){
+                this.objList.unshift({id:this.id,name:this.name})
+            }
+        }
+    })
+</script>
+</body>
+</html>
